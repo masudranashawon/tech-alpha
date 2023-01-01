@@ -14,6 +14,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Navbar */
 .nav-link {
   position: relative;
 }
@@ -32,4 +33,20 @@ body {
 
 .nav-link:hover::before {
   width: 100%;
+}
+
+/* Slider */
+.slider {
+  height: calc(100vh - 5rem);
+  width: 500vw;
+  display: flex;
+  transition: 1s ease;
+}
+
+.slide {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
 }
