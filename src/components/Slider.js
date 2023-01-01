@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+
 const data = [
   {
     id: 1,
@@ -42,15 +45,52 @@ const data = [
 ];
 
 const Slider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      currentSlide === 0 ? data.length - 1 : (prevSlide) => prevSlide - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide(
+      currentSlide === data.length - 1 ? 0 : (prevSlide) => prevSlide + 1
+    );
+  };
+
   return (
-    <div className='slider'>
-      {data.map((image) => (
-        <div
-          className='slide'
-          style={{ backgroundImage: `url(${image.src}) ` }}
-          key={image.id}
-        ></div>
-      ))}
+    <div className='frame relative'>
+      <div
+        className='slider'
+        style={{ transform: `translateX(-${100 * currentSlide}vw)` }}
+      >
+        {data.map((image) => (
+          <div
+            className='slide'
+            style={{ backgroundImage: `url(${image.src}) ` }}
+            key={image.id}
+          ></div>
+        ))}
+      </div>
+      <div className='slider-buttons absolute z-[1] text-2xl left-0 right-0 bottom-20 flex gap-10 m-auto w-fit'>
+        <button
+          onClick={prevSlide}
+          className='prev-btn w-20 h-14 bg-violet-900 text-violet-200 border border-violet-200 flex justify-center items-center hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300'
+        >
+          <span>
+            <BsArrowLeft />
+          </span>
+        </button>
+        <button
+          onClick={nextSlide}
+          className='next-btn w-20 h-14 bg-violet-900 text-violet-200 border border-violet-200 flex justify-center items-center hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300'
+        >
+          <span>
+            <BsArrowRight />
+          </span>
+        </button>
+      </div>
     </div>
   );
 };
