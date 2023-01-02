@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import Slide from "./Slide";
 
 const data = [
   {
@@ -36,7 +37,7 @@ const data = [
   },
   {
     id: 5,
-    src: "https://i.ibb.co/YbS7mL2/smart-watches.jpg",
+    src: "https://i.ibb.co/vjPxyVz/smart-watch.png",
     headline: "Stay connected with smart watches",
     body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
     cta: "Connect with a smart watch",
@@ -66,11 +67,7 @@ const Slider = () => {
         style={{ transform: `translateX(-${100 * currentSlide}vw)` }}
       >
         {data.map((image) => (
-          <div
-            className='slide'
-            style={{ backgroundImage: `url(${image.src}) ` }}
-            key={image.id}
-          ></div>
+          <Slide key={image.id} image={image} />
         ))}
       </div>
       <div className='slider-buttons absolute z-[1] text-2xl left-0 right-0 bottom-20 flex gap-10 m-auto w-fit'>

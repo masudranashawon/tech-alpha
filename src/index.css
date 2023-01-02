@@ -14,6 +14,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Utilities */
+.space-font {
+  font-family: "Space Grotesk", sans-serif;
+}
+
 /* Navbar */
 .nav-link {
   position: relative;
@@ -43,10 +48,28 @@ body {
   transition: 1s ease;
 }
 
+/* Slide */
 .slide {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   width: 100vw;
   height: 100%;
+}
+
+.slide-cta-btn::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f97316;
+  width: 0%;
+  transition: 0.3s ease;
+}
+
+.slide-cta-btn:hover::before {
+  width: 100%;
 }
