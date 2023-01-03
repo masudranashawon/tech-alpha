@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className='navbar container mx-auto flex items-center justify-between'>
         <div className='left'>
           <span className='logo text-xl font-semibold'>
-            tech <span className='text-orange-500'>Alfa</span>
+            tech<span className='text-orange-500'>Alfa</span>
           </span>
         </div>
         <div className='right flex items-center gap-5'>
