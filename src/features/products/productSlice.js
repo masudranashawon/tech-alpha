@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { TbLoader } from "react-icons/tb";
 
 const initialState = {
   items: [],
@@ -23,14 +22,14 @@ export const productsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(productsFatching.pending, (state, action) => {
-      state.status = <TbLoader className='animate-spin inline-block' />;
+      state.status = "pending";
     });
     builder.addCase(productsFatching.fulfilled, (state, action) => {
       state.status = "";
       state.items = action.payload;
     });
     builder.addCase(productsFatching.rejected, (state, action) => {
-      state.status = "Something went wrong, please try again later!";
+      state.status = "rejected";
     });
   },
 });

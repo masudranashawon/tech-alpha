@@ -27,7 +27,7 @@ const Card = ({ product }) => {
           </span>
           <button
             onClick={() => addToCartHandler(product.id)}
-            className='bg-violet-500 text-violet-50 font-medium py-3 px-8 uppercase rounded-md hover:bg-orange-500 hover:text-orange-50 duration-300 shadow-lg shadow-violet-300 hover:shadow-orange-300'
+            className='bg-violet-500 text-violet-50 font-medium py-3 px-8 uppercase rounded-md hover:bg-orange-500 hover:text-orange-50 shadow-lg shadow-violet-300 hover:shadow-orange-300 duration-300'
           >
             Add to cart
           </button>
