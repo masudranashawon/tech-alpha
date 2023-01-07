@@ -24,10 +24,12 @@ export const productsSlice = createSlice({
     builder.addCase(productsFatching.pending, (state, action) => {
       state.status = "pending";
     });
+
     builder.addCase(productsFatching.fulfilled, (state, action) => {
       state.status = "";
       state.items = action.payload;
     });
+
     builder.addCase(productsFatching.rejected, (state, action) => {
       state.status = "rejected";
     });

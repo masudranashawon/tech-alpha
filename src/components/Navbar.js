@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
+
 const Navbar = () => {
   return (
     <div className='navbar-bg bg-violet-500 text-violet-50 h-20 flex justify-center items-center'>
