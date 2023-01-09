@@ -21,17 +21,19 @@ const Card = ({ product }) => {
         <span className='category-tag text-xs font-semibold text-teal-500 uppercase tracking-widest'>
           {product.category}
         </span>
-        <h3 className='product-name text-xl font-medium h-[5.25rem]'>
+        <h3 className='product-name sm:text-xl font-medium h-[3.5rem] md:h-[5.25rem] text-lg'>
           {product.name}
         </h3>
-        <p className='text-gray-500 h-[6rem]'>{product.description}</p>
+        <p className='text-gray-500 text-sm md:text-lg h-[4rem] md:h-[6rem]'>
+          {product.description}
+        </p>
         <div className='flex justify-between items-center'>
-          <span className='text-xl font-medium text-rose-500'>
+          <span className='md:text-xl text-lg font-medium text-rose-500'>
             {currencyFormatter(product.price)}
           </span>
           <button
             onClick={() => addToCartHandler(product)}
-            className='bg-violet-500 text-violet-50 font-medium py-3 px-8 uppercase rounded-md hover:bg-orange-500 hover:text-orange-50 shadow-lg shadow-violet-300 hover:shadow-orange-300 duration-300'
+            className='md:text-lg text-sm bg-violet-500 text-violet-50 font-medium py-3 px-8 uppercase rounded-md hover:bg-orange-500 hover:text-orange-50 shadow-lg shadow-violet-300 hover:shadow-orange-300 duration-300'
           >
             Add to cart
           </button>

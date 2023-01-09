@@ -70,10 +70,10 @@ const Slider = () => {
           <Slide key={image.id} image={image} />
         ))}
       </div>
-      <div className='slider-buttons absolute z-[1] text-2xl left-0 right-0 bottom-20 flex gap-10 m-auto w-fit'>
+      <div className='slider-buttons absolute z-[1] xs:text-lg text-2xl left-0 right-0 bottom-10 flex gap-10 m-auto w-fit'>
         <button
           onClick={prevSlide}
-          className='prev-btn w-20 h-14 bg-violet-900 text-violet-200 border border-violet-200 flex justify-center items-center hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300'
+          className='prev-btn w-10 h-10 lg:w-20 lg:h-14 bg-violet-900 text-violet-200 border border-violet-200 flex justify-center items-center hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300'
         >
           <span>
             <BsArrowLeft />
@@ -81,7 +81,7 @@ const Slider = () => {
         </button>
         <button
           onClick={nextSlide}
-          className='next-btn w-20 h-14 bg-violet-900 text-violet-200 border border-violet-200 flex justify-center items-center hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300'
+          className='next-btn w-10 h-10 lg:w-20 lg:h-14 bg-violet-900 text-violet-200 border border-violet-200 flex justify-center items-center hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300'
         >
           <span>
             <BsArrowRight />
