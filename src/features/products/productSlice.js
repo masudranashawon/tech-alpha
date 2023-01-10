@@ -6,6 +6,7 @@ const initialState = {
   status: null,
 };
 
+//Bringing products to the Async Thunk system via the Axios library.
 export const productsFatching = createAsyncThunk(
   "products/productsFatching",
   async () => {
@@ -16,10 +17,13 @@ export const productsFatching = createAsyncThunk(
   }
 );
 
+// Some case for products slice
 export const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {},
+
+  // Need extra reducers for promise type functions
   extraReducers: (builder) => {
     builder.addCase(productsFatching.pending, (state, action) => {
       state.status = "pending";

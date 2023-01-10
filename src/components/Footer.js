@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  //Menu active style
   const isNavActiveStyles = ({ isActive }) => {
     return {
       color: isActive ? "#d4d4d4" : null,

@@ -7,6 +7,7 @@ const Card = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  //Click add to cart button & dispatch product
   const addToCartHandler = (product) => {
     dispatch(addToCart(product));
     navigate("/cart");
@@ -21,7 +22,7 @@ const Card = ({ product }) => {
         <span className='category-tag text-xs font-semibold text-teal-500 uppercase tracking-widest'>
           {product.category}
         </span>
-        <h3 className='product-name sm:text-xl font-medium h-[3.5rem] md:h-[5.25rem] text-lg'>
+        <h3 className='product-name sm:text-xl font-medium h-[5rem] md:h-[5.25rem] text-lg'>
           {product.name}
         </h3>
         <p className='text-gray-500 text-sm md:text-lg h-[4rem] md:h-[6rem]'>
@@ -29,6 +30,7 @@ const Card = ({ product }) => {
         </p>
         <div className='flex justify-between items-center'>
           <span className='md:text-xl text-lg font-medium text-rose-500'>
+            {/* //This fucntion for formate price in USD currency */}
             {currencyFormatter(product.price)}
           </span>
           <button

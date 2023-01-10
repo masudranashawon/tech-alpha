@@ -5,6 +5,7 @@ import productsReducer, {
 } from "../features/products/productSlice";
 import cartReducer from "../features/products/cartSlice";
 
+//Tech Alpha store & reducers
 export const store = configureStore({
   reducer: {
     products: productsReducer,

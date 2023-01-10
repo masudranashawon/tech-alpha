@@ -46,6 +46,7 @@ const data = [
 ];
 
 const Slider = () => {
+  // Manual Sliding functionality
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const prevSlide = () => {
@@ -66,6 +67,7 @@ const Slider = () => {
         className='slider'
         style={{ transform: `translateX(-${100 * currentSlide}vw)` }}
       >
+        {/* Take taka from data arrey */}
         {data.map((image) => (
           <Slide key={image.id} image={image} />
         ))}

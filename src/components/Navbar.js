@@ -3,8 +3,10 @@ import { BsCart3 } from "react-icons/bs";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  //Accessing state from cart slice
   const { cartItems } = useSelector((state) => state.cart);
 
+  //Menu active style
   const isNavActiveStyles = ({ isActive }) => {
     return {
       color: isActive ? "#d4d4d4" : null,

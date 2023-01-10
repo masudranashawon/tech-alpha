@@ -23,6 +23,7 @@ const cartSlice = createSlice({
         // Increase item quantity
         state.cartItems[existedItemIndex].cartQuantity += 1;
 
+        // Toastify notification
         toast.info("Quantity increased!", {
           position: "bottom-left",
           autoClose: 5000,
@@ -38,6 +39,7 @@ const cartSlice = createSlice({
         const assembledItem = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(assembledItem);
 
+        // Toastify notification
         toast.success("Product added into cart!", {
           position: "bottom-left",
           autoClose: 5000,
@@ -54,12 +56,14 @@ const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
 
+    //Product remove if click remove button
     removeFromCart(state, action) {
       const updatedCartItems = state.cartItems.filter(
         (item) => item.id !== action.payload.id
       );
       state.cartItems = updatedCartItems;
 
+      // Toastify notification
       toast.error("Product removed from cart!", {
         position: "bottom-left",
         autoClose: 5000,
@@ -75,9 +79,11 @@ const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
 
+    //Clicking the Clear Cart button will remove all products
     clearCart(state, action) {
       state.cartItems = [];
 
+      // Toastify notification
       toast.error("Cart cleared!", {
         position: "bottom-left",
         autoClose: 5000,
@@ -93,6 +99,7 @@ const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
 
+    //Decrease item quantity
     decreaseCart(state, action) {
       const itemIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
@@ -102,6 +109,7 @@ const cartSlice = createSlice({
       if (state.cartItems[itemIndex].cartQuantity > 1) {
         state.cartItems[itemIndex].cartQuantity -= 1;
 
+        // Toastify notification
         toast.info("Quantity decreased!", {
           position: "bottom-left",
           autoClose: 5000,
@@ -119,6 +127,7 @@ const cartSlice = createSlice({
 
         state.cartItems = updatedCartItems;
 
+        // Toastify notification
         toast.error("Product removed from cart!", {
           position: "bottom-left",
           autoClose: 5000,
@@ -135,6 +144,7 @@ const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
 
+    //Subtotal all products with quantity
     getSubtotal(state, action) {
       const subtotal = state.cartItems.reduce((acc, item) => {
         const { price, cartQuantity } = item;

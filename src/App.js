@@ -13,6 +13,7 @@ const App = () => {
     <>
       <div className='app min-h-screen bg-gray-50 text-lg text-gray-700'>
         <Navbar />
+        {/* This ToastContainer for toast notification */}
         <ToastContainer />
         <Routes>
           <Route path='/' element={<Home />} />

@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { BsArrowLeft } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { BsArrowLeft } from "react-icons/bs";
+import { currencyFormatter } from "../utilities/currencyFormatter";
 import {
   addToCart,
   clearCart,
@@ -9,37 +10,44 @@ import {
   getSubtotal,
   removeFromCart,
 } from "../features/products/cartSlice";
-import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Cart = () => {
+  //Accessing state from cart slice
   const { cartItems: data, cartTotalAmount: subtotal } = useSelector(
     (state) => state.cart
   );
   const dispatch = useDispatch();
 
+  //Remove cart from cart
   const removeCartHandler = (product) => {
     dispatch(removeFromCart(product));
   };
 
+  //Increase cart item
   const handleIncrease = (product) => {
     dispatch(addToCart(product));
   };
 
-  useEffect(() => {
-    dispatch(getSubtotal());
-  }, [data, dispatch]);
-
+  //Decrease cart item
   const handleDecrease = (product) => {
     dispatch(decreaseCart(product));
   };
 
+  //Real time subtotal
+  useEffect(() => {
+    dispatch(getSubtotal());
+  }, [data, dispatch]);
+
   return (
     <div className='cart-section container mx-auto py-10'>
+      {/* This header will indicate if the cart is empty or contains one or more products */}
       <h2 className='section-title text-2xl font-bold space-font text-center uppercase mb-10'>
         {data.length > 0
           ? `You've added ${data.length} item${data.length > 1 ? "s" : ""}`
           : "Your cart is empty"}
       </h2>
+
+      {/* If cart is empty */}
       <div className='text-center'>
         {data.length === 0 && (
           <Link
@@ -53,6 +61,8 @@ const Cart = () => {
           </Link>
         )}
       </div>
+
+      {/* //If product exist */}
       {data.length > 0 && (
         <>
           <div className='cart-container px-5 md:px-0'>
@@ -63,6 +73,7 @@ const Cart = () => {
               <div className='col-total-price ml-auto'>Total Price</div>
             </div>
             <div className='products flex flex-col'>
+              {/* This data come from API in cart slice */}
               {data.map((product) => (
                 <div
                   key={product.id}
@@ -108,6 +119,7 @@ const Cart = () => {
                   </div>
                   <div className='total-price font-medium ml-auto'>
                     <span>
+                      {/* //This fucntion for formate price in USD currency */}
                       {currencyFormatter(product.price * product.cartQuantity)}
                     </span>
                   </div>
@@ -126,6 +138,7 @@ const Cart = () => {
               <div className='subtotal flex justify-between w-full font-medium md:text-2xl text-xl'>
                 <span className='text-sky-500'>Subtotal</span>
                 <span className='text-rose-500'>
+                  {/* //This fucntion for formate price in USD currency */}
                   {currencyFormatter(subtotal)}
                 </span>
               </div>
