@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addToCart } from "../features/products/cartSlice";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
@@ -39,6 +39,9 @@ const Card = ({ product }) => {
           >
             Add to cart
           </button>
+
+          {/* Link to the single product page */}
+          <Link to={`/products/${product._id}`}>View Details</Link>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@ const Products = () => {
 
         {/* If data comes from the API successfully */}
         {data.map((product) => (
-          <Card key={product.id} product={product} />
+          <Card key={product._id} product={product} />
         ))}
       </div>
     </div>
