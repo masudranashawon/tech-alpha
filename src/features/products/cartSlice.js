@@ -15,7 +15,7 @@ const cartSlice = createSlice({
     addToCart(state, action) {
       //If the item is already in the cart
       const existedItemIndex = state.cartItems.findIndex(
-        (item) => item.id === action.payload.id
+        (item) => item.name === action.payload.name
       );
 
       // If exist
@@ -59,7 +59,7 @@ const cartSlice = createSlice({
     //Product remove if click remove button
     removeFromCart(state, action) {
       const updatedCartItems = state.cartItems.filter(
-        (item) => item.id !== action.payload.id
+        (item) => item.name !== action.payload.name
       );
       state.cartItems = updatedCartItems;
 
@@ -102,7 +102,7 @@ const cartSlice = createSlice({
     //Decrease item quantity
     decreaseCart(state, action) {
       const itemIndex = state.cartItems.findIndex(
-        (item) => item.id === action.payload.id
+        (item) => item.name === action.payload.name
       );
 
       // If exist
@@ -122,7 +122,7 @@ const cartSlice = createSlice({
         });
       } else if (state.cartItems[itemIndex].cartQuantity === 1) {
         const updatedCartItems = state.cartItems.filter(
-          (item) => item.id !== action.payload.id
+          (item) => item.name !== action.payload.name
         );
 
         state.cartItems = updatedCartItems;

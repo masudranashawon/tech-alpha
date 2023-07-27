@@ -10,9 +10,7 @@ const initialState = {
 export const productsFatching = createAsyncThunk(
   "products/productsFatching",
   async () => {
-    const res = await axios.get(
-      "https://eager-sable-airedale.glitch.me/products"
-    );
+    const res = await axios.get("http://localhost:8080/api/products");
     return res.data;
   }
 );
