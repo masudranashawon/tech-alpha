@@ -76,7 +76,7 @@ const Cart = () => {
               {/* This data come from API in cart slice */}
               {data.map((product) => (
                 <div
-                  key={product.id}
+                  key={product._id}
                   className='product grid md:grid-cols-5 grid-cols-2 gap-10 mt-10 border-b pb-5 items-center'
                 >
                   <div className='left-sec col-span-3 md:col-span-2 flex gap-5'>

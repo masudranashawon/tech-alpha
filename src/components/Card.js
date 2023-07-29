@@ -1,18 +1,7 @@
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { addToCart } from "../features/products/cartSlice";
+import { Link } from "react-router-dom";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Card = ({ product }) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  //Click add to cart button & dispatch product
-  const addToCartHandler = (product) => {
-    dispatch(addToCart(product));
-    navigate("/cart");
-  };
-
   return (
     <div className='product flex flex-col gap-2 bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl duration-300'>
       <div className='product-img'>
@@ -33,15 +22,14 @@ const Card = ({ product }) => {
             {/* //This fucntion for formate price in USD currency */}
             {currencyFormatter(product.price)}
           </span>
-          <button
-            onClick={() => addToCartHandler(product)}
-            className='md:text-lg text-sm bg-violet-500 text-violet-50 font-medium py-3 px-8 uppercase rounded-md hover:bg-orange-500 hover:text-orange-50 shadow-lg shadow-violet-300 hover:shadow-orange-300 duration-300'
-          >
-            Add to cart
-          </button>
 
           {/* Link to the single product page */}
-          <Link to={`/products/${product._id}`}>View Details</Link>
+          <Link
+            className='md:text-lg text-sm text-violet-500 border-violet-500 border font-medium py-2 px-8 uppercase rounded-md hover:bg-orange-500 hover:text-orange-50 hover:border-orange-500 shadow-sm shadow-violet-300 hover:shadow-orange-300 duration-300'
+            to={`/products/${product._id}`}
+          >
+            View Details
+          </Link>
         </div>
       </div>
     </div>

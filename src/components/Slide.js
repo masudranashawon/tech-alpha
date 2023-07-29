@@ -13,7 +13,7 @@ const Slide = ({ image }) => {
         </h1>
         <p className='sm:w-3/5 text-sm sm:text-lg w-full'>{image.body}</p>
         <Link
-          to={`products/${image.category}`}
+          to={`products/category/${image.category}`}
           className='slide-cta-btn border border-violet-50 w-60 h-10 font-light text-sm sm:text-lg sm:w-72 sm:h-14 sm:font-medium mt-5 hover:text-orange-50 duration-300 relative'
         >
           <span className='w-full xs:h-full text-center absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-[2]'>

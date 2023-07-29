@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import Card from "../components/Card";
 import { TbLoader } from "react-icons/tb";
+import Card from "../components/Card";
 
 const Products = () => {
   //Accessing state from products slice
