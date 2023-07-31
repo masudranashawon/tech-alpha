@@ -14,7 +14,7 @@ const Category = () => {
       try {
         // Fetch the category product data using Axios or any other method
         const response = await axios.get(
-          `http://localhost:8080/api/products/category/${category}`
+          `${process.env.REACT_APP_BASE_URL}/api/products/category/${category}`
         );
 
         setCategoryProducts(response.data);

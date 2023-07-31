@@ -18,8 +18,9 @@ const Product = () => {
       try {
         // Fetch the single product data using Axios or any other method
         const response = await axios.get(
-          `http://localhost:8080/api/products/${productId}`
+          `${process.env.REACT_APP_BASE_URL}/api/products/${productId}`
         );
+
         setProduct(response.data);
         setLoading(false);
       } catch (error) {
@@ -66,6 +67,7 @@ const Product = () => {
             />
           </div>
         </div>
+
         <div className='product-content flex flex-col gap-3 md:gap-5 p-5'>
           <span className='category-tag text-sm font-semibold text-teal-500 uppercase tracking-widest'>
             {product.category}
@@ -76,7 +78,6 @@ const Product = () => {
           <p className='text-gray-500 text-lg md:text-xl'>
             {product.description}
           </p>
-
           <span className='md:text-2xl text-xl font-semibold text-rose-500'>
             {/* //This fucntion for formate price in USD currency */}
             {currencyFormatter(product.price)}

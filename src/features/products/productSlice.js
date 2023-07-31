@@ -10,7 +10,9 @@ const initialState = {
 export const productsFatching = createAsyncThunk(
   "products/productsFatching",
   async () => {
-    const res = await axios.get("http://localhost:8080/api/products");
+    const res = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/api/products`
+    );
     return res.data;
   }
 );
