@@ -1,73 +1,93 @@
-## Tech Alpha: Online Electronics Accessories Store
+# Tech Alpha: Online Electronics Accessories Store
 
 ### What is Tech Alpha?
 
-Tech Alpha is an online electronic accessories store that offers the latest and greatest electronic accessories. Our website features a clean, modern design, an easy-to-use interface and a robust shopping functionality built using Redux.js. All the product data has been served via JSON server and fetched using Axios. Shopping cart functionality has been implemented using Redux.js and cart items are also saved in the local storage of the client’s browser.
+Tech Alpha is an online electronic accessories store that offers the latest and greatest electronic accessories. Our website features a clean, modern design, an easy-to-use interface, and a robust shopping functionality built using Redux.js. All the product data has been served via the Express.js server and fetched using Axios. Shopping cart functionality has been implemented using Redux.js and cart items are also saved in the local storage of the client’s browser.
 <br/>
 <br/>
-This project is a front-end design of the website, built using React, Tailwind CSS, Redux and Axios. Currently, the website does not include any functionality for user authentication. Also, an admin panel for adding, updating and deleting products is not yet available.
 
-### Features:
+### Features
 
-1.  Built with React, Tailwind CSS, Redux and Axios
+1.  Built with React, Tailwind CSS, Redux, Axios, Express, MongoDB
 2.  Shopping cart functionality has been implemented using Redux.js
-3.  All the product data has been served via JSON server and fetched using Axios
+3.  All the product data has been served via Express server from MongoDB Database and fetched using Axios
 4.  Cart items also saved into the local storage of the client’s browser
 
-### How to use this repo?
+### Tools
 
-Download or clone this repo and run the following command in the terminal:
+- [React](https://reactjs.org/): A JavaScript library for building user interfaces and interactive components.
+- [Redux Toolkit](https://redux-toolkit.js.org/): A set of tools to simplify Redux development.
+- [Axios](https://axios-http.com/): A promise-based HTTP client for making API requests.
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
+- [Express.js](https://expressjs.com/): A minimal and flexible Node.js web application framework.
+- [MongoDB](https://www.mongodb.com/): A flexible and scalable NoSQL database for managing data efficiently.
 
-1. Clone the repository
+## Installation
+
+To install and configure Tech Alpha, Follow the steps below:
+
+> **Note**
+> **You must have Node.js and MongoDB installed on your system!**
+
+Download or clone `Client` &  `Server` both repo and run the following command in the terminal:
+
+1. Clone the `client` repository using
 
 ```
 git clone https://github.com/masudranashawon/tech-alpha.git
 ```
 
-2. Navigate to the project directory
+2. Clone the `server` repository using
 
 ```
-cd tech-alpha
+git clone https://github.com/masudranashawon/tech-alpha-server.git
 ```
 
-3. Install the dependencies
+3. Install the required dependencies in both the `client` and `server` directories by running
 
 ```
 npm install
-or
+```
+
+**Or**
+
+```
 npm i
 ```
 
-4. Start the development server
+<br>
+
+4. Create a `.env` file in the root directory of `server` and add the following variables:
+
+- `MONGO_URI`=the MongoDB connection string
+
+
+5. Create a `.env` file in the root directory of `client` and add the following variable:
+
+    - `REACT_APP_BASE_URL`=for example `http://localhost:3000`
+
+
+## Usage
+1. Start the `frontend` development server by running
 
 ```
 npm start
 ```
 
-### View the app (Hosted on Netlify):
+2. Start the  `Backend` development server by running
 
-https://tech-alpha-masud.netlify.app
+```
+npm run dev
+```
 
-### Necessary Links:
+## Links
 
-1. API Endpoint: https://eager-sable-airedale.glitch.me/products
-2. API GitHub: https://github.com/shohan-pherones/react-shopping-server
+- [Live Demo](https://tech-alpha-masud.netlify.app)
+- [Front-End Repository](https://github.com/masudranashawon/tech-alpha)
+- [Back-End Repository](https://github.com/masudranashawon/tech-alpha-server)
 
-### Tools:
+## Contributing
 
-React.js, Redux.js, Redux Toolkit, Axios, Tailwind CSS
+Contributions to Tech Alpha are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-### Contributing
-
-If you're interested in contributing to this project, please feel free to fork the repository and submit pull requests.
-
-### Future
-
-- Add checkout functionality
-- Add user authentication
-- Add an admin panel for adding, updating, and deleting products
-- Add more electronic accessories and categories
-
-Please let me know if you have any other questions or concerns. I'll be happy to help!
-
-## Thanks for visiting this repository!
+## Thank you for checking out Learnify!
